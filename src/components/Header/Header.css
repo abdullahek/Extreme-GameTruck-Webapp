@@ -1,0 +1,219 @@
+.app-header {
+  background: #000000;
+  border-bottom: 1px solid #440000;
+  padding: 0.5rem 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  gap: 1rem;
+  height: 100%;
+}
+
+.app-header .brand-title {
+  font-size: 1rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin: 0;
+  position: relative;
+  text-shadow: 
+    1px 1px 0px #000000,
+    -1px -1px 0px #000000,
+    1px -1px 0px #000000,
+    -1px 1px 0px #000000;
+}
+
+.app-header .brand-title::before {
+  content: 'E';
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.app-header .brand-title::after {
+  content: 'X';
+  position: absolute;
+  left: 0.65rem;
+  color: #ff0000;
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-shadow: 
+    1px 1px 0px #000000,
+    -1px -1px 0px #000000,
+    1px -1px 0px #000000,
+    -1px 1px 0px #000000,
+    0 0 8px #ff0000;
+  z-index: 3;
+  animation: headerGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes headerGlow {
+  from { 
+    text-shadow: 
+      1px 1px 0px #000000,
+      -1px -1px 0px #000000,
+      1px -1px 0px #000000,
+      -1px 1px 0px #000000,
+      0 0 8px #ff0000;
+  }
+  to { 
+    text-shadow: 
+      1px 1px 0px #000000,
+      -1px -1px 0px #000000,
+      1px -1px 0px #000000,
+      -1px 1px 0px #000000,
+      0 0 15px #ff0000;
+  }
+}
+
+.main-navigation {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+/* Navigation buttons - EXACT copy of logout button */
+.nav-item {
+  background: #2a0000;
+  color: #ffffff;
+  border: 1px solid #cc0000;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  height: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nav-item:hover {
+  background: #cc0000;
+  border-color: #ff0000;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(204, 0, 0, 0.6);
+}
+
+.nav-item.active {
+  background: #cc0000;
+  border-color: #ff0000;
+}
+
+.nav-icon {
+  font-size: 0.9rem;
+}
+
+.nav-text {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.logout-btn {
+  background: #2a0000;
+  color: #ffffff;
+  border: 1px solid #cc0000;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  height: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.logout-btn:hover {
+  background: #cc0000;
+  border-color: #ff0000;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(204, 0, 0, 0.6);
+}
+
+.logout-icon {
+  font-size: 0.9rem;
+}
+
+.logout-text {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .header-content {
+    gap: 0.5rem;
+  }
+
+  .app-header .brand-title {
+    font-size: 0.7rem;
+  }
+
+  .app-header .brand-title::after {
+    left: 0.45rem;
+    font-size: 0.8rem;
+  }
+
+  .main-navigation {
+    gap: 0.3rem;
+  }
+
+  .nav-item {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.65rem;
+    height: 24px;
+  }
+
+  .nav-text {
+    display: none;
+  }
+
+  .nav-icon {
+    font-size: 0.9rem;
+  }
+
+  .logout-btn {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.65rem;
+    height: 24px;
+  }
+
+  .logout-text {
+    display: none;
+  }
+
+  .logout-icon {
+    font-size: 1rem;
+  }
+}
